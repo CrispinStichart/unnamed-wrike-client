@@ -167,6 +167,17 @@ Rules for the contracts:
 - Status changes are deferred from the first shipped UI even though Wrike documents status-related task and workflow data; the exact mutation contract should be verified in the current schema reference before implementation.
 - Wrike's schema reference should be treated as canonical when it disagrees with older methods pages.
 
+## Local environment and API-validation rules
+
+- A local `.env` file exists with `CLEINT_ID`, `SECRET_KEY`, and `WRIKE_API_ACCESS_TOKEN`.
+- The application itself is still intended to use OAuth 2.0 flow for real product behavior.
+- Automated tests must remain fully offline and must not rely on the live Wrike API or the token in `.env`.
+- `WRIKE_API_ACCESS_TOKEN` is available only for the agent's own manual validation of API assumptions during development.
+- The token must be used for read-only API access only.
+- Never use the token to create, edit, delete, or otherwise write data in Wrike.
+- If live API validation is needed, prefer the narrowest possible read request and keep it outside automated test runs.
+- Never print secrets or copy `.env` values into logs, commits, tests, fixtures, or documentation.
+
 ## Source links
 
 - OAuth 2.0 Authorization: https://developers.wrike.com/oauth-20-authorization/
