@@ -9,6 +9,7 @@ RUN apt-get update \
         curl \
         git \
         less \
+        openssh-client \
         procps \
         software-properties-common \
         sudo \
