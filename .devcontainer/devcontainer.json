@@ -1,0 +1,26 @@
+{
+  "name": "wrike-client",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "overrideCommand": false,
+  "workspaceMount": "source=${localWorkspaceFolder},target=/repo/,type=bind,relabel=shared",
+  "workspaceFolder": "/repo",
+  "mounts": [
+    "source=wrike-client-vscode-home,target=/home/vscode/,type=volume"
+  ],
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "csharpier.csharpier-vscode",
+        "esbenp.prettier-vscode",
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "openai.chatgpt"
+      ]
+    }
+  }
+}
