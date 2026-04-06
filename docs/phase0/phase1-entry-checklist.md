@@ -39,6 +39,8 @@ Use this checklist before and during the first implementation pass.
 - Add contract tests for the Wrike adapter endpoints Phase 1 uses.
 - Verify the test suite runs without secrets or network access.
 - Verify `429`, `401`, and `404` handling paths are covered.
+- After each completed feature, commit and push once the relevant tests pass.
+- Use commit messages that summarize the change, why it was needed, and how it advances the current phase plan.
 
 ## Guardrails during implementation
 

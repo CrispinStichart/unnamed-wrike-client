@@ -63,6 +63,37 @@ Not planned unless research changes:
 - Keep API usage deliberate: avoid per-keystroke writes, chatty polling, and broad eager fetches.
 - If architecture rules change, update the relevant docs in `docs/phase0/` and this file in the same change.
 
+## Commit and push workflow
+
+- After each completed feature or meaningful milestone, run the relevant tests, then commit and push before starting the next feature.
+- Do not batch multiple unrelated features into one commit.
+- Do not commit unfinished work unless the user explicitly asks for a checkpoint commit.
+- A feature is only ready to commit when the implementation is done, the relevant tests pass, and any required docs are updated.
+- Push every committed feature branch state promptly so recovery is easy and progress is visible.
+- If a change is too large to describe clearly in one commit message, split it into smaller feature-sized commits.
+
+Commit message rules:
+- The subject line must summarize what changed in plain language.
+- The body must explain why the change was made.
+- The body must explain how the change fits the current phase or overall project plan.
+- When relevant, mention the user-facing workflow or architectural rule the change advances.
+- Prefer messages that describe intent and outcome, not just file edits.
+
+Suggested commit message template:
+
+```text
+<short summary>
+
+Why:
+- <problem, risk, or planned milestone addressed>
+
+How this fits the plan:
+- <Phase 1/Phase 2/guardrail alignment>
+
+What changed:
+- <key implementation points>
+```
+
 ## Architecture boundaries
 
 Use a small layered structure from the first scaffold.
